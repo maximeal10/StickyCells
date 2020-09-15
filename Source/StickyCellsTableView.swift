@@ -25,6 +25,10 @@ open class StickyCellsTableView: UITableView {
         }
     }
 
+    open var stickyOffsetTop: CGFloat {
+        contentInset.top
+    }
+
     open override func reloadData() {
 
         stickyViews.values.forEach { $0.removeFromSuperview() }
@@ -141,7 +145,7 @@ open class StickyCellsTableView: UITableView {
                 }
 
                 floatingTop = min(lowerLevelLastY - stickyView.bounds.height,
-                                  max(contentOffset.y + stickiedHeight,
+                                  max(contentOffset.y + stickyOffsetTop + stickiedHeight,
                                       originTop))
                 lastLevelY[level] = floatingTop
             } else {
