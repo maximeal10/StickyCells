@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'StickyCells'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Table View with sticky cells'
 
   s.description      = <<-DESC
